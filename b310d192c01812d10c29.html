@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>humoroustools</title>
+</head>
+<body>
+    <p id="c"></p>
+    <script>
+        window.onload = function() {
+            fetch('https://ipinfo.io/json?token=f8980f4f6cd741')
+                .then(response => response.json())
+                .then(data => {
+                    const c2 = data.loc.split(',');
+                    const l = c2[0];
+                    const l2 = c2[1];
+                    document.getElementById("c").innerText = 
+                        `Latitude: ${l},
+                         Longitude: ${l2}`;
+                })
+        };
+    </script>
+</body>
+</html>
